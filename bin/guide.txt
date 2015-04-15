@@ -1,0 +1,9 @@
+Drag and drop the adc to the open text box as usual.
+
+Files are saved as SEED-GUID and the file name is written to the open text box without the file extension
+
+If it's your first time using the upload adc on a server: In IIS manager - Request Filtering - .aspx needs to be allowed
+
+Create a directory in the resources path of the. Qex called "data". Make sure this directory is writeable by the windows server account running asp.
+
+Make sure to set the adc properties "debugable" to false. before the survey goes live. There are security risks otherwise.

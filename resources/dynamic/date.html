@@ -1,0 +1,14 @@
+﻿{% If Not(CurrentQuestion.IsDateOnly) Then %}
+    Dim attrMin = On(CurrentQuestion.MinDate <> DK, "min=\"" + CurrentQuestion.MinDate.Format("dd/MM/yyyy") + "\"", "")
+    Dim attrMax = = On(CurrentQuestion.MaxDate <> DK, "max=\"" + CurrentQuestion.MaxDate.Format("dd/MM/yyyy") + "\"", "")
+
+    Dim placeholder = CurrentADC.PropValue("placeholder")
+    Dim attrPlaceholder = On(placeholder <> "", "placeholder=\"" + placeholder + "\"", "")
+    
+    Dim attrRequired = On(CurrentQuestion.IsAllowDK, "required=\"required\"", "")
+%}
+    <input type="date" name="{%= CurrentQuestion.InputName("date") %}" value="{%= CurrentQuestion.InputValue("date") %}" {%:= attrMin %} {%:= attrMax %} {%:= attrPlaceholder %} {%:= attrRequired %}/>
+{% EndIf %}
+{% If Not(CurrentQuestion.IsTimeOnly) Then %}
+    <input type="time" name="{%= CurrentQuestion.InputName("time") %}" value="{%= CurrentQuestion.InputValue("time") %}"/>
+{% EndIf %}

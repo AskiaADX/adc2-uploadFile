@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control xmlns="http://www.askia.com/ADCSchema"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.askia.com/ADCSchema http://www.askia.com/Downloads/dev/schemas/adc2.0/Config.xsd"
+         version="2.0.0"
+         askiaCompat="5.3.3">
+  <info>
+    <name>adc2-uploadFile</name>
+    <fileName>adc2-uploadFile</fileName>
+    <guid>296cd906-60ab-49f9-819d-5c9e6c41f1fe</guid>
+    <version>1.0.1</version>
+    <date>2015-01-20</date>
+    <description>
+      <![CDATA[
+        Describe your ADC here
+        
+        Tested in:
+          List the browsers name and version where the ADC should work on.
+          
+        Dependencies:
+          - Name of the 3rd party resource. Version. URL 
+          - Name of the 3rd party resource. Version. URL
+        
+        Notes:
+          Special notes about incompatibility or warnings
+      ]]>
+    </description>
+    <author>
+      <![CDATA[
+        Author1 <author1@email.com>, 
+        Author2 <author2@email.com>
+      ]]>
+    </author>
+    <company>Askia</company>
+    <helpURL></helpURL>
+    <site></site>
+    <categories>
+      <category>General</category>
+    </categories>
+    <style width="400" height="300"/>
+    <constraints>
+      <constraint on="questions" single="false" multiple="false" numeric="false" date="false" open="true" />
+      <constraint on="controls" responseblock="true" textbox="true" />
+    </constraints>
+  </info>
+
+  <outputs defaultOutput="fallback">
+    <output id="fallback">
+      <description><![CDATA[Fallback when the browser doesn't support Javascript]]></description>
+      <condition><![CDATA[Not(Browser.Support("javascript"))]]></condition>
+      <content fileName="multiple.html" type="html" mode="dynamic" position="none" />
+      <content fileName="open.html" type="html" mode="dynamic" position="none" />
+      <content fileName="numeric.html" type="html" mode="dynamic" position="none" />
+      <content fileName="datetime.html" type="html" mode="dynamic" position="none" />
+      
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+	  <content fileName="WebForm1.aspx" type="html" mode="static" position="none" />
+    </output>
+  </outputs>
+
+  <properties>
+
+    <category id="general" name="General">
+    </category>
+	
+  </properties>
+</control>

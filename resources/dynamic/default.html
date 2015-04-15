@@ -1,0 +1,17 @@
+﻿<div id="adc_{%= CurrentQuestion.Id %}" class="adc-default">
+    <iframe src='{%= CurrentADC.URLTo("static/WebForm1.aspx") %}'></iframe>
+</div>
+<div id="guid_box" style="display:none;">{%= SEED %}-{%= currentQuestion.Shortcut %}-{%= GUID %}</div>
+{% 
+Dim inputName  =  CurrentQuestion.InputName()
+Dim inputValue =  CurrentQuestion.InputValue()
+
+Dim i
+
+Dim maxValue = CurrentQuestion.MaxValue
+Dim attrMax  = On(maxValue <> DK, "maxLength=\"" + maxValue + "\"", "")
+
+Dim attrRequired = On(CurrentQuestion.IsAllowDK, "required=\"required\"", "")
+%}
+<textarea id="adc_{%= inputName %}" name="{%= inputName %}" {%:= attrMax %} {%:= attrRequired %}>{%= inputValue %}</textarea>
+<div id="input_id_box" style="display:none;">adc_{%= inputName %}</div>
